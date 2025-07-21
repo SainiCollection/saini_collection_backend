@@ -30,6 +30,11 @@ const ContactUsSchema:Schema = new Schema<IContactUs>({
         type: String,
         required: true,
         trim: true
+    },
+    message:{
+        type: String,
+        required: true,
+        trim: true
     }
 },{
     timestamps:true

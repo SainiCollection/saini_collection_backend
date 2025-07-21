@@ -14,7 +14,7 @@ export const contactUsController = async (req:Request, res:Response)=>{
                 errors:parsed.error.format()
             })
         }
-        const {senderName, senderEmail,phoneNo, service, message} = parsed.data;
+        // const {senderName, senderEmail,phoneNo, service, message} = parsed.data;
         const contactData= await createContactUs(req.body);
         return res.status(200).json({
             status:"success",
