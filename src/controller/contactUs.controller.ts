@@ -32,17 +32,17 @@ export const contactUsController = async (req:Request, res:Response)=>{
 export const fetchContactUsController = async (req:Request, res:Response)=>{
     try {
         const messages = await ContactUsModel.find();
-        if(messages){
+        if (Array.isArray(messages) && messages.length > 0) {
             return res.status(200).json({
                 status:"success",
                 message:"Contact Us messages fetched successfully",
                 messages
-            })
-        }else{
+            });
+        } else {
             return res.status(404).json({
                 status:"not-found",
                 message:"No messages found"
-            })
+            });
         }
     } catch (error) {
         return res.status(500).json({
